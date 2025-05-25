@@ -1,0 +1,3 @@
+SELECT
+DAYOFWEEK(order_date) AS day_of_week
+FROM Orders; 
