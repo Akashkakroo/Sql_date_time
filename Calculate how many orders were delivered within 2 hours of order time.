@@ -1,0 +1,5 @@
+SELECT order_id, customer_id, timestampdiff(hour,CAST(CONCAT(order_date, " ", order_time) AS DATETIME), delivered_at) AS hour_difference
+FROM
+orders
+WHERE delivered_at IS NOT NULL
+AND timestampdiff(hour,CAST(CONCAT(order_date, " ", order_time) AS DATETIME), delivered_at) <= 2;
