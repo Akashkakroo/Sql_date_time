@@ -1,0 +1,5 @@
+SELECT order_date, AVG(TIMESTAMPDIFF(MINUTE, CAST(CONCAT(order_date, ' ', order_time) AS DATETIME) , delivered_at)) AS avg_delivery_time
+FROM orders
+WHERE delivered_at IS NOT NULL
+GROUP BY order_date
+ORDER BY order_date;
