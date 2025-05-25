@@ -1,0 +1,4 @@
+SELECT 
+HOUR(order_time) as order_hour, COUNT(*) AS total_order
+FROM orders
+GROUP BY order_hour;
